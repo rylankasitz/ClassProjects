@@ -29,7 +29,7 @@ namespace Ksu.Cis300.MapViewer
             get
             {
                 if(_zoom < _maxZoom)
-                {
+                {  
                     return true;
                 }
                 else

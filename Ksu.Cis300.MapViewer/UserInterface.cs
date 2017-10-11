@@ -77,7 +77,7 @@ namespace Ksu.Cis300.MapViewer
                     uxZoomIn.Enabled = true;
                     uxZoomOut.Enabled = false;
                 }
-                catch (Exception ex)
+                catch (Exception ex)   
                 {
                     MessageBox.Show(ex.ToString());
                 }

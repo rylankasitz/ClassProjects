@@ -115,7 +115,7 @@ namespace Ksu.Cis300.MapViewer
             _bounds = rectangle;
             if(height == 0)
             {
-                _streets = streets;
+                _streets = streets; 
             }
             else
             {                
@@ -151,24 +151,18 @@ namespace Ksu.Cis300.MapViewer
         /// <param name="scaleFactor">Translates map coornates to pixels</param>
         /// <param name="maxDepth">Maximun depth to draw the tree nodes</param>
         public void draw(Graphics graphics, int scaleFactor, int maxDepth)
-        {
-            RectangleF b = graphics.ClipBounds;
-            RectangleF newBounds = new RectangleF(b.X / scaleFactor, b.Y / scaleFactor, b.Width / scaleFactor, b.Height / scaleFactor);
-
-            //if (_bounds.IntersectsWith(newBounds))
-           // {
-                foreach (StreetSegment s in _streets)
-                {
-                    s.Draw(graphics, scaleFactor);                                
-                }
-                if (maxDepth > 0)
-                {           
-                    _southeastChild.draw(graphics, scaleFactor, maxDepth - 1);
-                    _northeastChild.draw(graphics, scaleFactor, maxDepth - 1);
-                    _southwestChild.draw(graphics, scaleFactor, maxDepth - 1);
-                    _northwestChild.draw(graphics, scaleFactor, maxDepth - 1);
-                }
-            //}          
+        {            
+            foreach (StreetSegment s in _streets)
+            {
+                s.Draw(graphics, scaleFactor);                                
+            }
+            if (maxDepth > 0)
+            {           
+                _southeastChild.draw(graphics, scaleFactor, maxDepth - 1);
+                _northeastChild.draw(graphics, scaleFactor, maxDepth - 1);
+                _southwestChild.draw(graphics, scaleFactor, maxDepth - 1);
+                _northwestChild.draw(graphics, scaleFactor, maxDepth - 1);
+            }                    
         }
     }
 }
