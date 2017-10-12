@@ -2,8 +2,16 @@
  * Author: Rylan Kasitz
  */
 
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Ksu.Cis300.MapViewer
 {
@@ -151,18 +159,18 @@ namespace Ksu.Cis300.MapViewer
         /// <param name="scaleFactor">Translates map coornates to pixels</param>
         /// <param name="maxDepth">Maximun depth to draw the tree nodes</param>
         public void draw(Graphics graphics, int scaleFactor, int maxDepth)
-        {            
+        {
             foreach (StreetSegment s in _streets)
             {
                 s.Draw(graphics, scaleFactor);                                
             }
             if (maxDepth > 0)
-            {           
+            {
                 _southeastChild.draw(graphics, scaleFactor, maxDepth - 1);
                 _northeastChild.draw(graphics, scaleFactor, maxDepth - 1);
                 _southwestChild.draw(graphics, scaleFactor, maxDepth - 1);
                 _northwestChild.draw(graphics, scaleFactor, maxDepth - 1);
-            }                    
+            }        
         }
     }
 }

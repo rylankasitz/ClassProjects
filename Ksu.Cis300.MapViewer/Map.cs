@@ -65,29 +65,22 @@ namespace Ksu.Cis300.MapViewer
         /// <param name="bounds">Bounds of the map</param>
         /// <param name="scaleFactor">The intial scale factor of the map</param>
         public Map(List<StreetSegment> streets, RectangleF bounds, int scaleFactor)
-        {
+        {          
             int streetNum = -1;
-            try
+            foreach (StreetSegment s in streets)
             {
-                foreach (StreetSegment s in streets)
+                streetNum++;
+                if (!IsWithinBounds(s.Start, bounds) || !IsWithinBounds(s.End, bounds))
                 {
-                    streetNum++;
-                    if (!IsWithinBounds(s.Start, bounds) || !IsWithinBounds(s.End, bounds))
-                    {
-                        throw new ArgumentException();
-                    }
+                    throw new ArgumentException("Street " + streetNum + " is not within the given bounds");
                 }
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show("Street " + streetNum + " is not within the given bounds");
-            }
+            }                            
 
             InitializeComponent();
 
             _map = new QuadTree(streets, bounds, _maxZoom);
             _scale = scaleFactor;
-            Size size = new Size(Convert.ToInt32(bounds.Width*scaleFactor), Convert.ToInt32(bounds.Height*scaleFactor));
+            Size size = new Size(Convert.ToInt32(bounds.Width * scaleFactor), Convert.ToInt32(bounds.Height * scaleFactor));
             Size = size;
         }
 

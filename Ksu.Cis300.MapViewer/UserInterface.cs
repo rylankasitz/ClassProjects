@@ -77,7 +77,7 @@ namespace Ksu.Cis300.MapViewer
                     uxZoomIn.Enabled = true;
                     uxZoomOut.Enabled = false;
                 }
-                catch (Exception ex)   
+                catch (ArgumentException ex)   
                 {
                     MessageBox.Show(ex.ToString());
                 }
@@ -112,8 +112,8 @@ namespace Ksu.Cis300.MapViewer
             uxZoomIn.Enabled = _map.CanZoomIn;
             uxZoomOut.Enabled = _map.CanZoomOut;
 
-            uxMapContainer.AutoScrollPosition = new Point(p.X / 2 + uxMapContainer.ClientSize.Width / 4,
-                                                          p.Y / 2 + uxMapContainer.ClientSize.Height / 4);
+            uxMapContainer.AutoScrollPosition = new Point(p.X / 2 - uxMapContainer.ClientSize.Width / 4,
+                                                          p.Y / 2 - uxMapContainer.ClientSize.Height / 4);
         }
     }
 }

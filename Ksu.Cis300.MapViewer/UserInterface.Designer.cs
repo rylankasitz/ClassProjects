@@ -46,7 +46,7 @@
             this.uxZoomOut});
             this.uxButtonBar.Location = new System.Drawing.Point(0, 0);
             this.uxButtonBar.Name = "uxButtonBar";
-            this.uxButtonBar.Size = new System.Drawing.Size(351, 25);
+            this.uxButtonBar.Size = new System.Drawing.Size(423, 25);
             this.uxButtonBar.TabIndex = 0;
             this.uxButtonBar.Text = "toolStrip1";
             // 
@@ -88,7 +88,7 @@
             this.uxMapContainer.AutoScroll = true;
             this.uxMapContainer.Location = new System.Drawing.Point(0, 28);
             this.uxMapContainer.Name = "uxMapContainer";
-            this.uxMapContainer.Size = new System.Drawing.Size(351, 239);
+            this.uxMapContainer.Size = new System.Drawing.Size(423, 327);
             this.uxMapContainer.TabIndex = 1;
             // 
             // uxOpenDialog
@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 265);
+            this.ClientSize = new System.Drawing.Size(423, 353);
             this.Controls.Add(this.uxMapContainer);
             this.Controls.Add(this.uxButtonBar);
             this.MinimumSize = new System.Drawing.Size(216, 221);
