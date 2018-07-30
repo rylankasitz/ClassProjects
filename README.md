@@ -1,4 +1,6 @@
 <h4>C# Projects</4>
+<h5>Rebate System</h5>
+Final Project for CIS 501, group project. It is a rebate system that follows model view controller and utilizes multithreading.
 <h5>Map Viewer</h5>
 This Project reads in csv files that contain street data and displays the streets on the by utilizeing a quadtree data structure.
 <h5>Text Analyzer</h5>
