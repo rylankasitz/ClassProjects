@@ -10,4 +10,4 @@ This program analyzes text documents an allows the user to look at the attruibut
 These games were made using android studios and utilized opengl in order to draw the sprites.
 <h4>Unity Projects</4>
 <h5>Tank Game</h5>
-This was a fun little multiplayer tank game that I made using unity and scripting with c#
+This was a fun little multiplayer tank game that I made using unity and scripting with c#.
